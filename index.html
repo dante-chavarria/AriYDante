@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ariadna &amp; Dante · Nuestra Boda</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="description" content="Acompáñanos a celebrar la boda de Ariadna y Dante — 16 de enero de 2027, Jardín Quinta Real de Cuernavaca.">
+  <meta name="theme-color" content="#c5a059">
+
+  <!-- Favicon (monograma dorado) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23c5a059'/%3E%3Ctext x='50' y='64' font-size='42' text-anchor='middle' fill='white' font-family='Georgia,serif'%3EA%26D%3C/text%3E%3C/svg%3E">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Estilos propios -->
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- =========================================================
+       SOBRE INTERACTIVO (pantalla de entrada)
+       ========================================================= -->
+  <div id="envelope-overlay">
+    <p class="envelope-intro-names">Ariadna &amp; Dante</p>
+    <p class="envelope-intro-sub">Tienes una invitación especial</p>
+
+    <div class="envelope" id="envelope" tabindex="0" role="button" aria-label="Abrir invitación">
+      <div class="envelope-letter"><span>16 · 01 · 2027</span></div>
+      <div class="envelope-body"></div>
+      <div class="envelope-flap"></div>
+      <div class="envelope-seal">A&amp;D</div>
+    </div>
+
+    <p class="envelope-hint">✦ Toca el sobre para abrir ✦</p>
+  </div>
+
+  <!-- =========================================================
+       NAVBAR
+       ========================================================= -->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-wedding" id="mainNavbar">
+    <div class="container">
+      <a class="navbar-brand" href="#portada">A &amp; D</a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Menú">
+        <i class="bi bi-list" style="font-size:1.6rem;color:#9e7b37;"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav ms-auto text-center">
+          <li class="nav-item"><a class="nav-link" href="#bienvenida">Bienvenida</a></li>
+          <li class="nav-item"><a class="nav-link" href="#historia">Historia</a></li>
+          <li class="nav-item"><a class="nav-link" href="#ceremonia">Ceremonia</a></li>
+          <li class="nav-item"><a class="nav-link" href="#ubicacion">Ubicación</a></li>
+          <li class="nav-item"><a class="nav-link" href="#vestimenta">Vestimenta</a></li>
+          <li class="nav-item"><a class="nav-link" href="hospedaje.html">Hospedaje</a></li>
+          <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
+          <li class="nav-item"><a class="nav-link" href="#regalos">Regalos</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =========================================================
+       1) PORTADA
+       ========================================================= -->
+  <header id="portada" class="hero">
+    <div class="hero-inner gold-frame" data-aos="fade-up">
+      <p class="hero-eyebrow">¡Nos casamos!</p>
+      <h1 class="hero-names">Ariadna <span class="hero-amp">&amp;</span> Dante</h1>
+      <p class="hero-phrase">Una historia que comenzó con un paso de salsa y durará toda la vida.</p>
+      <div class="hero-date-badge">
+        <i class="bi bi-gem"></i>
+        <span>16 · Enero · 2027</span>
+      </div>
+      <p class="mt-3" style="font-size:0.78rem; letter-spacing:1px; color:var(--ink-soft);">
+        Nos hicimos novios un 16 de enero de 2021 — y nos casamos el mismo día, seis años después.
+      </p>
+    </div>
+    <a href="#bienvenida" class="scroll-cue"><i class="bi bi-chevron-double-down"></i></a>
+  </header>
+
+  <!-- =========================================================
+       2) BIENVENIDA
+       ========================================================= -->
+  <section id="bienvenida" class="section-pad">
+    <div class="container text-center">
+      <p class="section-tag" data-aos="fade-up">Con la bendición de Dios</p>
+      <h2 class="section-title" data-aos="fade-up">Bienvenidos a nuestra boda</h2>
+      <svg class="flourish" viewBox="0 0 200 60" data-aos="fade-up">
+        <path d="M10,30 C40,10 70,50 100,30 C130,10 160,50 190,30" stroke="#c5a059" stroke-width="1.5" fill="none"/>
+        <circle cx="100" cy="30" r="3" fill="#c5a059"/>
+      </svg>
+      <p class="mx-auto mb-5" style="max-width:640px; color:var(--ink-soft);" data-aos="fade-up">
+        Con el corazón lleno de alegría, junto a nuestras familias, queremos invitarte a celebrar
+        el día en que unimos nuestras vidas para siempre. Tu presencia es el regalo más importante
+        que podemos recibir.
+      </p>
+
+      <div class="row g-4 justify-content-center mb-5">
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="50">
+          <div class="welcome-card">
+            <h5><i class="bi bi-flower2 me-2"></i>Padres de la novia</h5>
+            <p>Cristóbal Vera Díaz Ordaz</p>
+            <p>María de Lourdes Iglesias Hernández</p>
+          </div>
+        </div>
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="150">
+          <div class="welcome-card">
+            <h5><i class="bi bi-flower2 me-2"></i>Padres del novio</h5>
+            <p>Valente Chavarría Jiménez</p>
+            <p>María Concepción Barrientos de los Santos</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50">
+          <div class="welcome-card">
+            <h5><i class="bi bi-gift me-2"></i>Padrino de velación</h5>
+            <p>Carlos Partida</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+          <div class="welcome-card">
+            <h5><i class="bi bi-gem me-2"></i>Padrinos de anillos</h5>
+            <p>Soledad Zamora</p>
+            <p>José Luis Barrientos</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       3) NUESTRA HISTORIA
+       ========================================================= -->
+  <section id="historia" class="section-pad" style="background:var(--white);">
+    <div class="container text-center">
+      <p class="section-tag" data-aos="fade-up">Cómo empezó todo</p>
+      <h2 class="section-title mb-5" data-aos="fade-up">Nuestra Historia</h2>
+
+      <div class="timeline">
+        <div class="timeline-item" data-aos="fade-right">
+          <span class="timeline-dot"></span>
+          <div class="timeline-content">
+            <span class="timeline-year">Finales de la pandemia</span>
+            <h4><i class="bi bi-music-note-beamed me-1" style="color:var(--gold);"></i> Un paso de salsa</h4>
+            <p>Nos conocimos en clases de salsa. Entre giros y compases descubrimos que teníamos
+              un ritmo en común mucho más grande que un simple baile.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-left">
+          <span class="timeline-dot"></span>
+          <div class="timeline-content">
+            <span class="timeline-year">Primera cita</span>
+            <h4><i class="bi bi-heart me-1" style="color:var(--gold);"></i> "La Vie en Rose"</h4>
+            <p>Dante eligió un restaurante romántico para nuestra primera cita, y el clic fue
+              instantáneo. Por casualidad, ese día el lugar estaba decorado para una pedida de
+              mano real — como si el universo ya supiera hacia dónde íbamos.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-right">
+          <span class="timeline-dot"></span>
+          <div class="timeline-content">
+            <span class="timeline-year">Años después · Florencia</span>
+            <h4><i class="bi bi-gem me-1" style="color:var(--gold);"></i> El compromiso</h4>
+            <p>Entre las calles de Florencia, Italia, decidimos decir que sí a estar juntos para
+              siempre. Un momento que guardamos en el corazón — y ahora queremos celebrarlo contigo.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mosaico curado de la historia: Hist1/Hist2 apiladas + Hist3 (compromiso) destacada -->
+      <div class="row g-3 mt-4 story-mosaic">
+        <div class="col-12 col-md-5" data-aos="fade-right">
+          <div class="row g-3">
+            <div class="col-12">
+              <div class="story-photo">
+                <img src="Img/Hist1.jpg" alt="Clases de salsa" loading="lazy">
+                <span class="story-caption">Clases de salsa</span>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="story-photo">
+                <img src="Img/Hist2.jpg" alt="Cita romantica" loading="lazy">
+                <span class="story-caption">La primera cita</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-7" data-aos="fade-left">
+          <div class="story-photo story-photo-feature">
+            <img src="Img/Hist3.png" alt="Compromiso en Florencia" loading="lazy">
+            <span class="story-caption story-caption-feature">Florencia, Italia · El compromiso</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       COUNTDOWN
+       ========================================================= -->
+  <section class="countdown-section">
+    <div class="container">
+      <p class="section-tag" data-aos="fade-up">Faltan solo</p>
+      <h2 data-aos="fade-up" style="font-size:1.6rem;">Para celebrar juntos</h2>
+      <div class="countdown-wrap" data-aos="zoom-in">
+        <div class="countdown-box">
+          <span class="num" id="cd-days">00</span>
+          <span class="label">Días</span>
+        </div>
+        <div class="countdown-box">
+          <span class="num" id="cd-hours">00</span>
+          <span class="label">Horas</span>
+        </div>
+        <div class="countdown-box">
+          <span class="num" id="cd-minutes">00</span>
+          <span class="label">Min</span>
+        </div>
+        <div class="countdown-box">
+          <span class="num" id="cd-seconds">00</span>
+          <span class="label">Seg</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       4) CEREMONIA Y RECEPCIÓN
+       ========================================================= -->
+  <section id="ceremonia" class="section-pad">
+    <div class="container text-center">
+      <p class="section-tag" data-aos="fade-up">Los detalles</p>
+      <h2 class="section-title mb-5" data-aos="fade-up">Ceremonia &amp; Recepción</h2>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-5" data-aos="fade-up">
+          <div class="event-card">
+            <div class="event-icon"><i class="bi bi-chat-heart"></i></div>
+            <h4>Ceremonia</h4>
+            <p style="color:var(--ink-soft);">3:00 PM</p>
+            <p style="color:var(--ink-soft); font-size:0.88rem;">Jardín Quinta Real de Cuernavaca</p>
+          </div>
+        </div>
+        <div class="col-md-5" data-aos="fade-up" data-aos-delay="150">
+          <div class="event-card">
+            <div class="event-icon"><i class="bi bi-cup-hot"></i></div>
+            <h4>Recepción</h4>
+            <p style="color:var(--ink-soft);">A continuación</p>
+            <p style="color:var(--ink-soft); font-size:0.88rem;">Mismo lugar — Jardín Quinta Real de Cuernavaca</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       5) UBICACIÓN
+       ========================================================= -->
+  <section id="ubicacion" class="section-pad" style="background:var(--white);">
+    <div class="container text-center">
+      <p class="section-tag" data-aos="fade-up">Cómo llegar</p>
+      <h2 class="section-title" data-aos="fade-up">Ubicación</h2>
+      <p class="mx-auto mb-4" style="max-width:560px; color:var(--ink-soft);" data-aos="fade-up">
+        Jardín Quinta Real de Cuernavaca — casi entrando a Cuernavaca viniendo desde la Ciudad de México.
+      </p>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8" data-aos="zoom-in">
+          <div class="map-frame-wrap mb-4">
+            <iframe
+              src="https://www.google.com/maps?q=Jard%C3%ADn+Quinta+Real+Cuernavaca&output=embed"
+              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              title="Mapa - Jardín Quinta Real de Cuernavaca"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex flex-wrap gap-3 justify-content-center" data-aos="fade-up">
+        <a class="btn-gold" href="https://maps.app.goo.gl/QBwGFh3ovHHrN6xG9" target="_blank" rel="noopener">
+          <i class="bi bi-geo-alt me-1"></i> Abrir en Google Maps
+        </a>
+        <a class="btn-outline-gold" href="https://waze.com/ul?q=Jard%C3%ADn%20Quinta%20Real%20Cuernavaca&navigate=yes" target="_blank" rel="noopener">
+          <i class="bi bi-signpost-2 me-1"></i> Abrir en Waze
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       6) CÓDIGO DE VESTIMENTA
+       ========================================================= -->
+  <section id="vestimenta" class="section-pad">
+    <div class="container text-center">
+      <p class="section-tag" data-aos="fade-up">Dress code</p>
+      <h2 class="section-title" data-aos="fade-up">Formal / Elegante</h2>
+      <p class="mx-auto mb-4" style="max-width:560px; color:var(--ink-soft);" data-aos="fade-up">
+        Queremos celebrar rodeados de elegancia. Te sugerimos vestir de gala, evitando el blanco e
+        ivory (reservados para la novia) y colores muy casuales como denim o tenis deportivos.
+      </p>
+      <div class="d-flex justify-content-center gap-3 mb-4" data-aos="zoom-in">
+        <span class="palette-dot" style="background:#c5a059;" title="Oro"></span>
+        <span class="palette-dot" style="background:#2b2b2b;" title="Negro"></span>
+        <span class="palette-dot" style="background:#6b3f2a;" title="Terracota"></span>
+        <span class="palette-dot" style="background:#3a4a3a;" title="Verde botella"></span>
+        <span class="palette-dot" style="background:#5a2a3a;" title="Vino"></span>
+        <span class="palette-dot" style="background:#1f2a4a;" title="Azul marino"></span>
+      </div>
+      <a class="btn-gold" href="https://mx.pinterest.com/" target="_blank" rel="noopener" data-aos="fade-up">
+        <i class="bi bi-pinterest me-1"></i> Ver inspiración en Pinterest
+      </a>
+      <p class="mt-3" style="font-size:0.75rem; color:var(--ink-soft);" data-aos="fade-up">
+        <i class="bi bi-info-circle me-1"></i>Enlace de ejemplo — reemplázalo por el board real de
+        Pinterest que armes para tu boda.
+      </p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       7) HOSPEDAJE (teaser — la tabla completa vive en hospedaje.html
+          para no romper el mood romántico de la invitación)
+       ========================================================= -->
+  <section id="hospedaje" class="section-pad" style="background:var(--white);">
+    <div class="container text-center">
+      <p class="section-tag" data-aos="fade-up">Para nuestros invitados de fuera</p>
+      <h2 class="section-title" data-aos="fade-up">Hospedaje</h2>
+      <svg class="flourish" viewBox="0 0 200 60" data-aos="fade-up">
+        <path d="M10,30 C40,10 70,50 100,30 C130,10 160,50 190,30" stroke="#c5a059" stroke-width="1.5" fill="none"/>
+        <circle cx="100" cy="30" r="3" fill="#c5a059"/>
+      </svg>
+      <p class="mx-auto mb-4" style="max-width:560px; color:var(--ink-soft);" data-aos="fade-up">
+        Para quienes vienen de fuera, reunimos algunas opciones de hoteles y casas cerca del
+        Jardín Quinta Real — desde hoteles de cadena hasta casas privadas con alberca, ideales
+        para quedarse en grupo.
+      </p>
+      <a class="btn-gold" href="hospedaje.html" data-aos="zoom-in">
+        <i class="bi bi-house-heart me-1"></i> Ver opciones de hospedaje
+      </a>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       8) GALERÍA + TRIVIA
+       ========================================================= -->
+  <section id="galeria" class="section-pad">
+    <div class="container text-center">
+      <p class="section-tag" data-aos="fade-up">Momentos</p>
+      <h2 class="section-title mb-4" data-aos="fade-up">Galería</h2>
+
+      <div class="row g-3 mb-5">
+        <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="0">
+          <div class="gallery-item"><img src="Img/Foto1.jpeg" alt="Ariadna y Dante" loading="lazy"></div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="50">
+          <div class="gallery-item"><img src="Img/Foto2.jpeg" alt="Ariadna y Dante" loading="lazy"></div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+          <div class="gallery-item"><img src="Img/Foto3.jpeg" alt="Ariadna y Dante" loading="lazy"></div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="150">
+          <div class="gallery-item"><img src="Img/Foto4.jpeg" alt="Ariadna y Dante" loading="lazy"></div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+          <div class="gallery-item"><img src="Img/Foto5.jpeg" alt="Ariadna y Dante" loading="lazy"></div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="250">
+          <div class="gallery-item"><img src="Img/Foto6.jpeg" alt="Ariadna y Dante" loading="lazy"></div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+          <div class="gallery-item"><img src="Img/Foto7.jpeg" alt="Ariadna y Dante" loading="lazy"></div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="350">
+          <div class="gallery-item"><img src="Img/Foto8.jpeg" alt="Ariadna y Dante" loading="lazy"></div>
+        </div>
+      </div>
+
+      <!-- TRIVIA DE AMOR -->
+      <p class="section-tag" data-aos="fade-up">Juego para los invitados</p>
+      <h2 class="section-title mb-2" data-aos="fade-up">Trivia de Amor</h2>
+      <p class="mx-auto mb-4" style="max-width:560px; color:var(--ink-soft);" data-aos="fade-up">
+        Haz clic en cada tarjeta para descubrir datos curiosos (¡y apuestas divertidas!) sobre los novios.
+      </p>
+
+      <div class="row g-4">
+        <div class="col-sm-6 col-lg-3" data-aos="flip-up" data-aos-delay="0">
+          <div class="trivia-card">
+            <div class="trivia-card-inner">
+              <div class="trivia-face trivia-front">
+                <i class="bi bi-music-note-beamed"></i>
+                <p>¿Dónde se conocieron?</p>
+                <span class="trivia-hint">Toca para revelar</span>
+              </div>
+              <div class="trivia-face trivia-back"><p>En clases de salsa, a finales de la pandemia. 💃🕺</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3" data-aos="flip-up" data-aos-delay="100">
+          <div class="trivia-card">
+            <div class="trivia-card-inner">
+              <div class="trivia-face trivia-front">
+                <i class="bi bi-cup-straw"></i>
+                <p>¿Cómo se llama el restaurante de su primera cita?</p>
+                <span class="trivia-hint">Toca para revelar</span>
+              </div>
+              <div class="trivia-face trivia-back"><p>"La Vie en Rose" — donde por casualidad hubo una pedida de mano real ese día. 🌹</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3" data-aos="flip-up" data-aos-delay="200">
+          <div class="trivia-card">
+            <div class="trivia-card-inner">
+              <div class="trivia-face trivia-front">
+                <i class="bi bi-airplane"></i>
+                <p>¿En qué ciudad se comprometieron?</p>
+                <span class="trivia-hint">Toca para revelar</span>
+              </div>
+              <div class="trivia-face trivia-back"><p>En Florencia, Italia. 🇮🇹✨</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3" data-aos="flip-up" data-aos-delay="300">
+          <div class="trivia-card">
+            <div class="trivia-card-inner">
+              <div class="trivia-face trivia-front">
+                <i class="bi bi-calendar-heart"></i>
+                <p>¿Cuántos años llevan juntos el día de la boda?</p>
+                <span class="trivia-hint">Toca para revelar</span>
+              </div>
+              <div class="trivia-face trivia-back"><p>¡6 años! Se casan el mismo día que se hicieron novios: 16 de enero. 💍</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3" data-aos="flip-up" data-aos-delay="0">
+          <div class="trivia-card">
+            <div class="trivia-card-inner">
+              <div class="trivia-face trivia-front">
+                <i class="bi bi-emoji-laughing"></i>
+                <p>¿Quién baila mejor salsa?</p>
+                <span class="trivia-hint">Toca para revelar (apuesta)</span>
+              </div>
+              <div class="trivia-face trivia-back"><p>Depende de a quién le preguntes... ¡pregúntales en la pista de baile! 😉</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3" data-aos="flip-up" data-aos-delay="100">
+          <div class="trivia-card">
+            <div class="trivia-card-inner">
+              <div class="trivia-face trivia-front">
+                <i class="bi bi-clock-history"></i>
+                <p>¿Quién tarda más en arreglarse?</p>
+                <span class="trivia-hint">Toca para revelar (apuesta)</span>
+              </div>
+              <div class="trivia-face trivia-back"><p>Un secreto que solo se revela el día de la boda. ⏰</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3" data-aos="flip-up" data-aos-delay="200">
+          <div class="trivia-card">
+            <div class="trivia-card-inner">
+              <div class="trivia-face trivia-front">
+                <i class="bi bi-chat-heart"></i>
+                <p>¿Quién dijo "te amo" primero?</p>
+                <span class="trivia-hint">Toca para revelar (apuesta)</span>
+              </div>
+              <div class="trivia-face trivia-back"><p>Eso... solo ellos lo saben. Pregúntales en la recepción. 💌</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3" data-aos="flip-up" data-aos-delay="300">
+          <div class="trivia-card">
+            <div class="trivia-card-inner">
+              <div class="trivia-face trivia-front">
+                <i class="bi bi-controller"></i>
+                <p>¿Cuál fue su primer viaje juntos?</p>
+                <span class="trivia-hint">Toca para revelar</span>
+              </div>
+              <div class="trivia-face trivia-back"><p>Sabemos que terminó en Florencia con un anillo de por medio. 💍✈️</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       9) MESA DE REGALOS
+       ========================================================= -->
+  <section id="regalos" class="section-pad" style="background:var(--white);">
+    <div class="container text-center">
+      <p class="section-tag" data-aos="fade-up">Con cariño</p>
+      <h2 class="section-title" data-aos="fade-up">Mesa de Regalos</h2>
+      <p class="mx-auto mb-5" style="max-width:600px; color:var(--ink-soft);" data-aos="fade-up">
+        Tu presencia es nuestro mejor regalo. Si deseas obsequiarnos algo más, estas son nuestras
+        opciones — todas te permiten aportar en efectivo si así lo prefieres.
+      </p>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-6 col-lg-4 position-relative" data-aos="fade-up">
+          <span class="gift-recommend-badge">Recomendada</span>
+          <div class="gift-card">
+            <div class="gift-icon"><i class="bi bi-bag-heart"></i></div>
+            <h4 style="font-size:1.1rem;">Liverpool</h4>
+            <p style="color:var(--ink-soft); font-size:0.88rem;">
+              Mesa de regalos con fondo de efectivo — la opción más práctica y de mayor confianza en México.
+            </p>
+            <a class="btn btn-outline-gold btn-sm mt-2" href="https://www.liverpool.com.mx/tienda/mesa-de-regalos" target="_blank" rel="noopener">Ir a Liverpool</a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="gift-card">
+            <div class="gift-icon"><i class="bi bi-cart3"></i></div>
+            <h4 style="font-size:1.1rem;">Amazon</h4>
+            <p style="color:var(--ink-soft); font-size:0.88rem;">
+              Lista de regalos con envío directo, ideal para invitados fuera de la ciudad.
+            </p>
+            <a class="btn btn-outline-gold btn-sm mt-2" href="https://www.amazon.com.mx/wedding" target="_blank" rel="noopener">Ir a Amazon</a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="gift-card">
+            <div class="gift-icon"><i class="bi bi-bank"></i></div>
+            <h4 style="font-size:1.1rem;">Transferencia</h4>
+            <p style="color:var(--ink-soft); font-size:0.88rem;">Si prefieres apoyarnos directo en efectivo:</p>
+            <div class="clabe-box mt-2">
+              <span id="clabe-number">XXX-XXX-XXX-XXX</span>
+              <button class="copy-btn" id="copy-clabe-btn" type="button">
+                <i class="bi bi-clipboard"></i> Copiar
+              </button>
+            </div>
+            <p class="mt-2 mb-0" style="font-size:0.75rem; color:var(--ink-soft);">A nombre de Ariadna Vera / Dante Chavarría</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="mt-5 mx-auto" style="max-width:640px; font-size:0.82rem; color:var(--ink-soft);" data-aos="fade-up">
+        <i class="bi bi-lightbulb me-1"></i><strong>¿Cuál elegir?</strong> Te recomendamos
+        <strong>Liverpool</strong> como opción principal — permite convertir regalos en efectivo
+        de forma sencilla y es la más usada en bodas en México — y complementarla con
+        <strong>Amazon</strong> para quienes prefieran algo tangible. La transferencia queda como
+        alternativa directa para quien la prefiera.
+      </p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+  <footer class="wedding-footer">
+    <div class="container">
+      <p class="footer-names">Ariadna &amp; Dante</p>
+      <p class="footer-hashtag">#ARIYDANTESECASAN · 16 · 01 · 2027</p>
+      <p style="max-width:480px; margin:0 auto; font-size:0.9rem; opacity:0.85;">
+        Gracias por ser parte de nuestra historia y por acompañarnos en este nuevo capítulo.
+        ¡Te esperamos con todo nuestro cariño!
+      </p>
+    </div>
+  </footer>
+
+  <button id="back-to-top" aria-label="Volver arriba"><i class="bi bi-arrow-up"></i></button>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <!-- Script propio -->
+  <script src="script.js"></script>
+</body>
+</html>

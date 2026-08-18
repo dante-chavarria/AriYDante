@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Hospedaje · Ariadna &amp; Dante</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="description" content="Opciones de hospedaje recomendadas para la boda de Ariadna y Dante en Cuernavaca.">
+  <meta name="theme-color" content="#c5a059">
+
+  <!-- Favicon (monograma dorado) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23c5a059'/%3E%3Ctext x='50' y='64' font-size='42' text-anchor='middle' fill='white' font-family='Georgia,serif'%3EA%26D%3C/text%3E%3C/svg%3E">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Estilos propios -->
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- =========================================================
+       NAVBAR
+       ========================================================= -->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-wedding scrolled" id="mainNavbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html#portada">A &amp; D</a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Menú">
+        <i class="bi bi-list" style="font-size:1.6rem;color:#9e7b37;"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav ms-auto text-center">
+          <li class="nav-item"><a class="nav-link" href="index.html#bienvenida">Bienvenida</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#historia">Historia</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#ceremonia">Ceremonia</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#ubicacion">Ubicación</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#vestimenta">Vestimenta</a></li>
+          <li class="nav-item"><a class="nav-link active" href="hospedaje.html">Hospedaje</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#galeria">Galería</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#regalos">Regalos</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =========================================================
+       PAGE HERO
+       ========================================================= -->
+  <header class="page-hero gold-frame">
+    <p class="section-tag" data-aos="fade-up">Para nuestros invitados de fuera</p>
+    <h1 data-aos="fade-up">Hospedaje</h1>
+    <svg class="flourish" viewBox="0 0 200 60" data-aos="fade-up">
+      <path d="M10,30 C40,10 70,50 100,30 C130,10 160,50 190,30" stroke="#c5a059" stroke-width="1.5" fill="none"/>
+      <circle cx="100" cy="30" r="3" fill="#c5a059"/>
+    </svg>
+    <p data-aos="fade-up">
+      Reunimos algunas opciones de hoteles y casas cerca del Jardín Quinta Real de Cuernavaca
+      para que elijas la que mejor se acomode a tu grupo.
+    </p>
+  </header>
+
+  <!-- =========================================================
+       TABLA DE HOSPEDAJE
+       ========================================================= -->
+  <section class="section-pad" style="background:var(--white); padding-top:20px;">
+    <div class="container text-center">
+
+      <div class="note-callout text-start mx-auto mb-4" style="max-width:760px;" data-aos="fade-up">
+        <i class="bi bi-info-circle me-1"></i>
+        Precios de referencia, sujetos a cambio y disponibilidad. Da clic en
+        <strong>“Detalles”</strong> para ver la distribución de camas y amenidades, o en
+        <strong>“Reservar”</strong> para confirmar directo con cada opción.
+      </div>
+
+      <div class="table-responsive table-wedding" data-aos="fade-up">
+        <table class="table table-borderless mb-0 align-middle">
+          <thead>
+            <tr>
+              <th>Opción</th>
+              <th>Ubicación</th>
+              <th>Hab.</th>
+              <th>Cupo</th>
+              <th>Precio</th>
+              <th>Detalles</th>
+              <th>Reservar</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <!-- 1. Casa Lomas -->
+            <tr>
+              <td class="text-start"><span class="badge-type badge-casa">Casa privada</span><br>Casa Lomas</td>
+              <td class="text-start"><a href="https://www.google.com/maps/search/?api=1&query=C.+Nueva+Francia+505+Cuernavaca" target="_blank" rel="noopener"><i class="bi bi-geo-alt"></i> C. Nueva Francia 505</a></td>
+              <td>5</td>
+              <td>25</td>
+              <td class="text-start">1 noche: $10,500<br>2 noches: $17,000</td>
+              <td><button class="btn btn-sm btn-link toggle-details-btn" type="button" data-bs-toggle="collapse" data-bs-target="#det1" aria-expanded="false" aria-controls="det1">Ver <i class="bi bi-chevron-down"></i></button></td>
+              <td><a class="btn btn-outline-gold btn-sm" href="https://www.google.com/maps/search/?api=1&query=C.+Nueva+Francia+505+Cuernavaca" target="_blank" rel="noopener">Contactar</a></td>
+            </tr>
+            <tr class="collapse" id="det1">
+              <td colspan="7" class="detail-row">
+                <div class="detail-grid">
+                  <div>
+                    <h6>Distribución de camas</h6>
+                    <ul>
+                      <li>R1: cama king</li>
+                      <li>R2: dos camas matrimoniales</li>
+                      <li>R3: cama king</li>
+                      <li>R4: dos camas king</li>
+                      <li>R5: 4 camas individuales</li>
+                      <li>R6: cama matrimonial</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h6>Extras</h6>
+                    <p class="mb-0" style="font-size:0.83rem;">Garage para 6 autos. Parrilla. Alberca. Chapoteadero.
+                      Aire acondicionado. Área de juegos para niños. Cancha de squash. Centro de lavado. Billar.
+                      Cocina equipada. Servicios incluidos: luz, agua, gas, Wi-Fi y telecable.</p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <!-- 2. Fiesta Inn Cuernavaca -->
+            <tr>
+              <td class="text-start"><span class="badge-type badge-hotel">Hotel (cadena)</span><br>Fiesta Inn Cuernavaca</td>
+              <td class="text-start">Cuernavaca</td>
+              <td>—</td>
+              <td>—</td>
+              <td class="text-start" style="color:var(--ink-soft);">Consultar</td>
+              <td style="color:var(--ink-soft);">—</td>
+              <td><a class="btn btn-outline-gold btn-sm" href="https://www.google.com/search?q=Fiesta+Inn+Cuernavaca+reservar" target="_blank" rel="noopener">Buscar / reservar</a></td>
+            </tr>
+
+            <!-- 3. Casa 2 -->
+            <tr>
+              <td class="text-start"><span class="badge-type badge-casa">Casa privada</span><br>Casa 2</td>
+              <td class="text-start"><a href="https://www.google.com/maps?q=18.963261,-99.205055" target="_blank" rel="noopener"><i class="bi bi-geo-alt"></i> Ver en mapa</a></td>
+              <td>4</td>
+              <td>9</td>
+              <td class="text-start"><span class="badge-type" style="background:var(--gold-pale); color:var(--gold-dark);">Mín. 2 noches</span><br>2 noches: $9,000</td>
+              <td><button class="btn btn-sm btn-link toggle-details-btn" type="button" data-bs-toggle="collapse" data-bs-target="#det3" aria-expanded="false" aria-controls="det3">Ver <i class="bi bi-chevron-down"></i></button></td>
+              <td><a class="btn btn-outline-gold btn-sm" href="https://www.google.com/maps?q=18.963261,-99.205055" target="_blank" rel="noopener">Contactar</a></td>
+            </tr>
+            <tr class="collapse" id="det3">
+              <td colspan="7" class="detail-row">
+                <div class="detail-grid">
+                  <div>
+                    <h6>Distribución de camas</h6>
+                    <ul>
+                      <li>R1: cama king</li>
+                      <li>R2: cama king</li>
+                      <li>R3: dos camas individuales</li>
+                      <li>R4: cama matrimonial + cama individual</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h6>Extras</h6>
+                    <p class="mb-0" style="font-size:0.83rem;">Alberca climatizada. Cocina. 3 baños. Parrilla. Terraza.</p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <!-- 4. Hotel Real Ocotepec -->
+            <tr>
+              <td class="text-start"><span class="badge-type badge-hotel">Hotel</span><br>Hotel Real Ocotepec</td>
+              <td class="text-start">Ocotepec, Cuernavaca</td>
+              <td>—</td>
+              <td>—</td>
+              <td class="text-start" style="color:var(--ink-soft);">Consultar</td>
+              <td style="color:var(--ink-soft);">—</td>
+              <td><a class="btn btn-outline-gold btn-sm" href="https://www.booking.com/Share-OOQD59p" target="_blank" rel="noopener">Ver en Booking</a></td>
+            </tr>
+
+            <!-- 5. Casa Privada con Alberca Volada -->
+            <tr>
+              <td class="text-start"><span class="badge-type badge-casa">Casa privada</span><br>Casa Privada Alberca Volada</td>
+              <td class="text-start">Cuernavaca</td>
+              <td>5</td>
+              <td>10 – 12</td>
+              <td class="text-start">1 noche: $4,000<br><span style="color:var(--ink-soft);">2 noches: consultar</span></td>
+              <td><button class="btn btn-sm btn-link toggle-details-btn" type="button" data-bs-toggle="collapse" data-bs-target="#det5" aria-expanded="false" aria-controls="det5">Ver <i class="bi bi-chevron-down"></i></button></td>
+              <td><a class="btn btn-outline-gold btn-sm" href="https://www.booking.com/Share-scjE2V" target="_blank" rel="noopener">Ver en Booking</a></td>
+            </tr>
+            <tr class="collapse" id="det5">
+              <td colspan="7" class="detail-row">
+                <div class="detail-grid">
+                  <div>
+                    <h6>Distribución de camas</h6>
+                    <ul>
+                      <li>R1: 1 cama matrimonial y 1 cama king size</li>
+                      <li>R2: 1 cama matrimonial</li>
+                      <li>R3: 1 cama matrimonial</li>
+                      <li>R4: 2 literas</li>
+                      <li>Extra: 1 sofá cama</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h6>Extras</h6>
+                    <p class="mb-0" style="font-size:0.83rem;">5 recámaras con 3 baños completos y 2 medios baños,
+                      alberca y jacuzzi con calefacción y vista panorámica. Roof garden. Hasta 5 lugares de
+                      estacionamiento. Sala de TV. Gimnasio. 2 jardines. Sala jardín zen. Sala de estar. Amplio
+                      comedor. Seguridad con circuito cerrado, cerca eléctrica y alarma. Cocina completa con barra
+                      desayunador.</p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <!-- 6. Casa Haru -->
+            <tr>
+              <td class="text-start"><span class="badge-type badge-casa">Casa privada</span><br>Casa Haru</td>
+              <td class="text-start">Cuernavaca</td>
+              <td>5</td>
+              <td>14 – 18</td>
+              <td class="text-start"><span class="badge-type" style="background:var(--gold-pale); color:var(--gold-dark);">Mín. 2 noches</span><br>2 noches: $12,700</td>
+              <td><button class="btn btn-sm btn-link toggle-details-btn" type="button" data-bs-toggle="collapse" data-bs-target="#det6" aria-expanded="false" aria-controls="det6">Ver <i class="bi bi-chevron-down"></i></button></td>
+              <td><a class="btn btn-outline-gold btn-sm" href="https://www.booking.com/Share-duD2rT" target="_blank" rel="noopener">Ver en Booking</a></td>
+            </tr>
+            <tr class="collapse" id="det6">
+              <td colspan="7" class="detail-row">
+                <div class="detail-grid">
+                  <div>
+                    <h6>Distribución de camas</h6>
+                    <ul>
+                      <li>R1: 1 cama king size</li>
+                      <li>R2: 2 camas matrimoniales</li>
+                      <li>R3: 1 cama matrimonial y 1 cama king size</li>
+                      <li>R4: 1 cama matrimonial</li>
+                      <li>R5: 1 cama king size</li>
+                      <li>Extra: 2 sofás cama</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h6>Extras</h6>
+                    <p class="mb-0" style="font-size:0.83rem;">Alberca climatizada. Jardín, asador y tumbling.
+                      Estacionamiento para 4 autos. Salida 8:00 pm. Alberca al aire libre y terraza. Recepción
+                      abierta las 24 horas. Aire acondicionado. Cocina equipada con refrigerador y cafetera. 5 baños
+                      con regadera. TV de pantalla plana.</p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <!-- 7. Hotel Villas Fantasy -->
+            <tr>
+              <td class="text-start"><span class="badge-type badge-hotel">Hotel</span><br>Hotel Villas Fantasy</td>
+              <td class="text-start">Cuernavaca</td>
+              <td>—</td>
+              <td>—</td>
+              <td class="text-start" style="color:var(--ink-soft);">Consultar</td>
+              <td style="color:var(--ink-soft);">—</td>
+              <td><a class="btn btn-outline-gold btn-sm" href="https://direct-book.com/properties/HotelVFCuernavacaDirect/contact?locale=es&checkInDate=2027-01-16&checkOutDate=2027-01-17" target="_blank" rel="noopener">Reservar directo</a></td>
+            </tr>
+
+            <!-- 8. Casa Armony -->
+            <tr>
+              <td class="text-start"><span class="badge-type badge-casa">Casa privada</span><br>Casa Armony</td>
+              <td class="text-start">Cuernavaca</td>
+              <td>3</td>
+              <td>8</td>
+              <td class="text-start">1 noche: $2,800<br><span style="color:var(--ink-soft);">2 noches: consultar</span></td>
+              <td><button class="btn btn-sm btn-link toggle-details-btn" type="button" data-bs-toggle="collapse" data-bs-target="#det8" aria-expanded="false" aria-controls="det8">Ver <i class="bi bi-chevron-down"></i></button></td>
+              <td><a class="btn btn-outline-gold btn-sm" href="https://www.booking.com/Share-M297K02" target="_blank" rel="noopener">Ver en Booking</a></td>
+            </tr>
+            <tr class="collapse" id="det8">
+              <td colspan="7" class="detail-row">
+                <div class="detail-grid">
+                  <div>
+                    <h6>Distribución de camas</h6>
+                    <ul>
+                      <li>R1: 2 camas matrimoniales</li>
+                      <li>R2: cama matrimonial</li>
+                      <li>R3: cama matrimonial</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h6>Extras</h6>
+                    <p class="mb-0" style="font-size:0.83rem;">Alberca, jardín, cocina.</p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+      <p class="mt-3" style="font-size:0.75rem; color:var(--ink-soft);" data-aos="fade-up">
+        <i class="bi bi-info-circle me-1"></i>Fiesta Inn Cuernavaca, Hotel Real Ocotepec y Hotel Villas Fantasy
+        aún no tienen precio/cupo capturado — usa su botón de reserva para consultarlo directo.
+      </p>
+
+      <a class="btn btn-outline-gold mt-5" href="index.html#galeria">
+        <i class="bi bi-arrow-left me-1"></i> Volver a la invitación
+      </a>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+  <footer class="wedding-footer">
+    <div class="container">
+      <p class="footer-names">Ariadna &amp; Dante</p>
+      <p class="footer-hashtag">#ARIYDANTESECASAN · 16 · 01 · 2027</p>
+      <small>Hecho con <i class="bi bi-heart-fill" style="color:#c5a059;"></i> para Ariadna &amp; Dante</small>
+    </div>
+  </footer>
+
+  <button id="back-to-top" aria-label="Volver arriba"><i class="bi bi-arrow-up"></i></button>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <!-- Script propio -->
+  <script src="script.js"></script>
+</body>
+</html>

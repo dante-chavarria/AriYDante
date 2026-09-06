@@ -99,6 +99,14 @@
         <path d="M10,30 C40,10 70,50 100,30 C130,10 160,50 190,30" stroke="#c5a059" stroke-width="1.5" fill="none"/>
         <circle cx="100" cy="30" r="3" fill="#c5a059"/>
       </svg>
+
+      <!-- Nota personalizada: se completa por script.js solo si ?invitado= hace match en invitados.json -->
+      <div id="guest-note" class="guest-note mx-auto mb-4" hidden data-aos="fade-up">
+        <span class="guest-note-tag" id="guest-note-tag"></span>
+        <p class="guest-note-name" id="guest-note-name"></p>
+        <p class="guest-note-message" id="guest-note-message"></p>
+      </div>
+
       <p class="mx-auto mb-5" style="max-width:640px; color:var(--ink-soft);" data-aos="fade-up">
         Con el corazón lleno de alegría, junto a nuestras familias, queremos invitarte a celebrar
         el día en que unimos nuestras vidas para siempre. Tu presencia es el regalo más importante
@@ -122,7 +130,8 @@
         </div>
       </div>
 
-      <div class="row g-4 justify-content-center">
+      <!-- id usado por script.js para reubicar esta fila al final si visibilidad.padrinos = "final" -->
+      <div class="row g-4 justify-content-center" id="padrinos-inicio-row">
         <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50">
           <div class="welcome-card">
             <h5><i class="bi bi-gift me-2"></i>Padrino de velación</h5>
@@ -553,6 +562,23 @@
         <strong>Amazon</strong> para quienes prefieran algo tangible. La transferencia queda como
         alternativa directa para quien la prefiera.
       </p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PADRINOS (versión "final") — oculta por defecto; script.js mueve
+       aquí la fila de padrinos de #padrinos-inicio-row cuando el
+       invitado tiene visibilidad.padrinos = "final"
+       ========================================================= -->
+  <section id="padrinos-final" class="section-pad" style="background:var(--white);" hidden>
+    <div class="container text-center">
+      <p class="section-tag" data-aos="fade-up">Con cariño</p>
+      <h2 class="section-title mb-4" data-aos="fade-up">Nuestros Padrinos</h2>
+      <svg class="flourish" viewBox="0 0 200 60" data-aos="fade-up">
+        <path d="M10,30 C40,10 70,50 100,30 C130,10 160,50 190,30" stroke="#c5a059" stroke-width="1.5" fill="none"/>
+        <circle cx="100" cy="30" r="3" fill="#c5a059"/>
+      </svg>
+      <div id="padrinos-final-slot"></div>
     </div>
   </section>
 

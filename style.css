@@ -276,6 +276,18 @@ a:hover { color: var(--gold); }
   text-align: center;
 }
 
+/* Invitación personalizada: código en la URL no encontrado en invitados.json */
+.envelope.is-locked {
+  cursor: not-allowed;
+  filter: grayscale(0.6) brightness(0.96);
+  opacity: 0.75;
+}
+.envelope.is-locked:hover { transform: none; }
+.envelope-hint.is-locked-hint {
+  animation: none;
+  opacity: 0.8;
+}
+
 @keyframes pulse-hint {
   0%, 100% { opacity: 0.55; }
   50% { opacity: 1; }
@@ -470,6 +482,43 @@ a:hover { color: var(--gold); }
   background: var(--gold);
   color: var(--white);
   transform: translateY(-3px);
+}
+
+/* =========================================================
+   NOTA PERSONALIZADA (invitación con ?invitado=CODIGO válido)
+   ========================================================= */
+.guest-note {
+  max-width: 620px;
+  background: linear-gradient(160deg, var(--white), var(--gold-pale));
+  border: 1px solid var(--gold-light);
+  border-radius: 10px;
+  padding: 28px 30px;
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+}
+.guest-note-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  background: rgba(197,160,89,0.15);
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+.guest-note-name {
+  font-family: var(--font-script);
+  font-size: 1.8rem;
+  color: var(--gold-dark);
+  margin-bottom: 8px;
+}
+.guest-note-message {
+  font-size: 0.92rem;
+  color: var(--ink);
+  line-height: 1.7;
+  margin-bottom: 0;
+  font-style: italic;
 }
 
 /* =========================================================

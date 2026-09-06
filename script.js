@@ -7,6 +7,112 @@
 document.addEventListener('DOMContentLoaded', function () {
 
   /* ---------------------------------------------------------
+     0) INVITACIÓN PERSONALIZADA (?invitado=CODIGO)
+     Lee invitados.json, busca el código de la URL y, si hace match,
+     rellena la nota personalizada y aplica la visibilidad de
+     padrinos. Si la URL trae un código y NO hace match, el sobre
+     se bloquea (no abre). Sin código en la URL, la invitación se
+     comporta de forma genérica (para que ustedes puedan seguir
+     revisando el diseño sin necesitar siempre un enlace).
+     --------------------------------------------------------- */
+  const GUESTS_URL = 'invitados.json';
+  let envelopeLocked = false;
+
+  function getGuestCodeFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get('invitado');
+    return code ? code.trim().toUpperCase() : null;
+  }
+
+  function lockEnvelope(message, hint) {
+    envelopeLocked = true;
+    const envelopeEl = document.getElementById('envelope');
+    const hintEl = document.querySelector('.envelope-hint');
+    const introSub = document.querySelector('.envelope-intro-sub');
+    if (envelopeEl) {
+      envelopeEl.classList.add('is-locked');
+      envelopeEl.setAttribute('aria-disabled', 'true');
+    }
+    if (introSub && message) introSub.textContent = message;
+    if (hintEl && hint) {
+      hintEl.textContent = hint;
+      hintEl.classList.add('is-locked-hint');
+    }
+  }
+
+  function applyGuest(guest) {
+    const introSub = document.querySelector('.envelope-intro-sub');
+    if (introSub) {
+      introSub.textContent = `Preparamos esta invitación especial para ${guest.nombre}`;
+    }
+
+    // Nota personalizada dentro de "Bienvenida"
+    const noteBox = document.getElementById('guest-note');
+    const noteTag = document.getElementById('guest-note-tag');
+    const noteName = document.getElementById('guest-note-name');
+    const noteMsg = document.getElementById('guest-note-message');
+    if (noteBox) {
+      const tagLabels = {
+        familia: '👪 Para ustedes, con cariño',
+        pareja: '💍 Para ustedes',
+        personal: '💌 Para ti'
+      };
+      if (noteTag) noteTag.textContent = tagLabels[guest.tipo] || '💌 Para ti';
+      if (noteName) noteName.textContent = guest.nombre;
+      if (noteMsg) noteMsg.textContent = guest.mensaje;
+      noteBox.hidden = false;
+    }
+
+    // Visibilidad de padrinos: "inicio" (por defecto, no se toca el DOM) o "final"
+    const padrinosPos = (guest.visibilidad && guest.visibilidad.padrinos) || 'inicio';
+    if (padrinosPos === 'final') {
+      const row = document.getElementById('padrinos-inicio-row');
+      const finalSection = document.getElementById('padrinos-final');
+      const finalSlot = document.getElementById('padrinos-final-slot');
+      if (row && finalSection && finalSlot) {
+        finalSlot.appendChild(row); // mueve el nodo real, no lo duplica
+        finalSection.hidden = false;
+      }
+    }
+  }
+
+  async function loadGuest() {
+    const code = getGuestCodeFromURL();
+    if (!code) {
+      // Sin código en la URL: esta invitación es personalizada, así que
+      // tampoco abre (evita que se comparta/indexe el link "pelón").
+      lockEnvelope('Esta es una invitación personalizada.', 'Pide tu enlace a los novios ✦');
+      return;
+    }
+
+    try {
+      // Cache-busting: cada carga pide la versión más reciente del JSON,
+      // nunca una copia vieja guardada en caché del navegador/CDN.
+      const bust = Date.now();
+      const res = await fetch(`${GUESTS_URL}?v=${bust}`, { cache: 'no-store' });
+      if (!res.ok) throw new Error('No se pudo leer invitados.json');
+      const data = await res.json();
+      const guests = Array.isArray(data.invitados) ? data.invitados : [];
+      const guest = guests.find(function (g) {
+        return (g.id || '').toUpperCase() === code;
+      });
+
+      if (!guest) {
+        lockEnvelope('Este enlace no es válido.', 'Pide tu enlace personal a los novios ✦');
+        return;
+      }
+      applyGuest(guest);
+    } catch (err) {
+      // Si falla la carga (sin internet, JSON caído, etc.) no dejamos el
+      // sobre en un estado ambiguo: lo tratamos igual que un código inválido.
+      console.warn('No se pudo cargar la invitación personalizada:', err);
+      lockEnvelope('No pudimos verificar tu invitación.', 'Intenta de nuevo más tarde ✦');
+    }
+  }
+
+  const guestReady = loadGuest();
+
+  /* ---------------------------------------------------------
      1) SOBRE INTERACTIVO (portada)
      --------------------------------------------------------- */
   const envelope = document.getElementById('envelope');
@@ -20,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function openEnvelope() {
-    if (!envelope || envelope.classList.contains('is-open')) return;
+    if (!envelope || envelope.classList.contains('is-open') || envelopeLocked) return;
     envelope.classList.add('is-open');
 
     // Espera a que termine la animación del sobre antes de desvanecer el overlay
@@ -31,9 +137,14 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   if (envelope) {
-    envelope.addEventListener('click', openEnvelope);
-    envelope.addEventListener('keypress', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') openEnvelope();
+    // Evita el clic mientras se verifica el código (fetch local, casi
+    // instantáneo) para que no se alcance a abrir un sobre que debía
+    // quedar bloqueado.
+    guestReady.finally(function () {
+      envelope.addEventListener('click', openEnvelope);
+      envelope.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') openEnvelope();
+      });
     });
   }
 

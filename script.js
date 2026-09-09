@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const noteMsg = document.getElementById('guest-note-message');
     if (noteBox) {
       const tagLabels = {
-        familia: '👪 Para ustedes, con cariño',
+        familia: 'Para ustedes, con cariño',
         pareja: '💍 Para ustedes',
         personal: '💌 Para ti'
       };

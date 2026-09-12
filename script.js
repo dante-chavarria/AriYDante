@@ -15,13 +15,56 @@ document.addEventListener('DOMContentLoaded', function () {
      comporta de forma genérica (para que ustedes puedan seguir
      revisando el diseño sin necesitar siempre un enlace).
      --------------------------------------------------------- */
-  const GUESTS_URL = 'invitados.json';
+  const GUESTS_URL = 'invitados.csv';
   let envelopeLocked = false;
 
   function getGuestCodeFromURL() {
     const params = new URLSearchParams(window.location.search);
     const code = params.get('invitado');
     return code ? code.trim().toUpperCase() : null;
+  }
+
+  // Parser CSV mínimo (soporta campos entre comillas con comas, comillas
+  // dobles escapadas "" y saltos de línea dentro del campo) — así el
+  // archivo invitados.csv se puede editar tranquilamente en Excel o
+  // Google Sheets sin romper el sitio.
+  function parseCSV(text) {
+    const rows = [];
+    let row = [];
+    let field = '';
+    let inQuotes = false;
+    for (let i = 0; i < text.length; i++) {
+      const char = text[i];
+      const next = text[i + 1];
+      if (inQuotes) {
+        if (char === '"' && next === '"') { field += '"'; i++; }
+        else if (char === '"') { inQuotes = false; }
+        else { field += char; }
+      } else if (char === '"') {
+        inQuotes = true;
+      } else if (char === ',') {
+        row.push(field); field = '';
+      } else if (char === '\r') {
+        // ignorado: Windows usa \r\n como salto de línea
+      } else if (char === '\n') {
+        row.push(field); rows.push(row); row = []; field = '';
+      } else {
+        field += char;
+      }
+    }
+    if (field.length > 0 || row.length > 0) { row.push(field); rows.push(row); }
+    return rows.filter(function (r) { return r.length > 1 || (r[0] || '').trim() !== ''; });
+  }
+
+  function csvToGuestList(text) {
+    const rows = parseCSV(text);
+    if (rows.length === 0) return [];
+    const headers = rows[0].map(function (h) { return h.trim().toLowerCase(); });
+    return rows.slice(1).map(function (r) {
+      const obj = {};
+      headers.forEach(function (h, idx) { obj[h] = (r[idx] || '').trim(); });
+      return obj;
+    });
   }
 
   function lockEnvelope(message, hint) {
@@ -64,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Visibilidad de padrinos: "inicio" (por defecto, no se toca el DOM) o "final"
-    const padrinosPos = (guest.visibilidad && guest.visibilidad.padrinos) || 'inicio';
+    const padrinosPos = (guest.padrinos || 'inicio').toLowerCase();
     if (padrinosPos === 'final') {
       const row = document.getElementById('padrinos-inicio-row');
       const finalSection = document.getElementById('padrinos-final');
@@ -86,13 +129,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     try {
-      // Cache-busting: cada carga pide la versión más reciente del JSON,
+      // Cache-busting: cada carga pide la versión más reciente del CSV,
       // nunca una copia vieja guardada en caché del navegador/CDN.
       const bust = Date.now();
       const res = await fetch(`${GUESTS_URL}?v=${bust}`, { cache: 'no-store' });
-      if (!res.ok) throw new Error('No se pudo leer invitados.json');
-      const data = await res.json();
-      const guests = Array.isArray(data.invitados) ? data.invitados : [];
+      if (!res.ok) throw new Error('No se pudo leer invitados.csv');
+      const text = await res.text();
+      const guests = csvToGuestList(text);
       const guest = guests.find(function (g) {
         return (g.id || '').toUpperCase() === code;
       });
@@ -230,12 +273,12 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   /* ---------------------------------------------------------
-     5) COPIAR CLABE al portapapeles
+     5) COPIAR CLABE al portapapeles (Cuenta de Dante / Cuenta de Ariadna)
      --------------------------------------------------------- */
-  const copyBtn = document.getElementById('copy-clabe-btn');
-  const clabeText = document.getElementById('clabe-number');
+  document.querySelectorAll('.copy-btn[data-copy-target]').forEach(function (copyBtn) {
+    const clabeText = document.getElementById(copyBtn.dataset.copyTarget);
+    if (!clabeText) return;
 
-  if (copyBtn && clabeText) {
     copyBtn.addEventListener('click', function () {
       const value = clabeText.textContent.trim();
 
@@ -257,7 +300,7 @@ document.addEventListener('DOMContentLoaded', function () {
         fallbackCopy(value, showCopied);
       }
     });
-  }
+  });
 
   function fallbackCopy(text, cb) {
     const temp = document.createElement('textarea');

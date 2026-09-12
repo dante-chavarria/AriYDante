@@ -32,7 +32,7 @@
        SOBRE INTERACTIVO (pantalla de entrada)
        ========================================================= -->
   <div id="envelope-overlay">
-    <p class="envelope-intro-names">Ariadna  &amp;  Dante</p>
+    <p class="envelope-intro-names">Ariadna &amp; Dante</p>
     <p class="envelope-intro-sub">Tienes una invitación especial</p>
 
     <div class="envelope" id="envelope" tabindex="0" role="button" aria-label="Abrir invitación">
@@ -115,14 +115,14 @@
       </p>
 
       <div class="row g-4 justify-content-center mb-5">
-        <div class="col-md-6" data-aos="fade-up" data-aos-delay="50">
+        <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="50">
           <div class="welcome-card">
             <h5><i class="bi bi-flower2 me-2"></i>Padres de la novia</h5>
             <p>María de Lourdes Iglesias Hernández</p>
             <p>Cristóbal Vera Díaz Ordaz</p>
           </div>
         </div>
-        <div class="col-md-6" data-aos="fade-up" data-aos-delay="150">
+        <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="150">
           <div class="welcome-card">
             <h5><i class="bi bi-flower2 me-2"></i>Padres del novio</h5>
             <p>María Concepción Barrientos de los Santos</p>
@@ -133,13 +133,13 @@
 
       <!-- id usado por script.js para reubicar esta fila al final si visibilidad.padrinos = "final" -->
       <div class="row g-4 justify-content-center" id="padrinos-inicio-row">
-        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50">
+        <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50">
           <div class="welcome-card">
             <h5><i class="bi bi-gift me-2"></i>Padrino de velación</h5>
             <p>Ing. Carlos Partida Cervantes</p>
           </div>
         </div>
-        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+        <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
           <div class="welcome-card">
             <h5><i class="bi bi-gem me-2"></i>Padrinos de anillos</h5>
             <p>Dr. José Luis Barrientos de los Santos</p>
@@ -256,7 +256,7 @@
       <h2 class="section-title mb-5" data-aos="fade-up">Ceremonia &amp; Recepción</h2>
 
       <div class="row g-4 justify-content-center">
-        <div class="col-md-5" data-aos="fade-up">
+        <div class="col-12 col-md-5" data-aos="fade-up">
           <div class="event-card">
             <div class="event-icon"><i class="bi bi-chat-heart"></i></div>
             <h4>Ceremonia</h4>
@@ -264,7 +264,7 @@
             <p style="color:var(--ink-soft); font-size:0.88rem;">Jardín Quinta Real de Cuernavaca</p>
           </div>
         </div>
-        <div class="col-md-5" data-aos="fade-up" data-aos-delay="150">
+        <div class="col-12 col-md-5" data-aos="fade-up" data-aos-delay="150">
           <div class="event-card">
             <div class="event-icon"><i class="bi bi-cup-hot"></i></div>
             <h4>Recepción</h4>
@@ -288,7 +288,7 @@
       </p>
 
       <div class="row justify-content-center">
-        <div class="col-lg-8" data-aos="zoom-in">
+        <div class="col-12 col-lg-8" data-aos="zoom-in">
           <div class="map-frame-wrap mb-4">
             <iframe
               src="https://www.google.com/maps?q=Jard%C3%ADn+Quinta+Real+Cuernavaca&output=embed"
@@ -317,29 +317,40 @@
       <p class="section-tag" data-aos="fade-up">Dress code</p>
       <h2 class="section-title" data-aos="fade-up">Formal / Elegante</h2>
       <p class="mx-auto mb-4" style="max-width:560px; color:var(--ink-soft);" data-aos="fade-up">
-        Queremos celebrar rodeados de elegancia. Te sugerimos vestir de gala, evitando los blancos (beige, arenas, ivorys, etc)
-        reservados para los novios y los colores muy casuales.
+        Queremos celebrar rodeados de elegancia. Te pedimos vestir de gala evitando tonos claros
+        (blanco, beige, arena, ivory, etc.), que reservamos para los novios. Fuera de eso, ¡tú
+        eliges! Aquí te dejamos una paleta de inspiración, pero puedes usar estos colores
+        <strong>o cualquier otro</strong> con el que te sientas cómodo/a.
       </p>
-      <div class="d-flex justify-content-center gap-3 mb-4" data-aos="zoom-in">
-        <p class="section-tag" data-aos="fade-up">Oro</p>
-        <span class="palette-dot" style="background:#c5a059;" title="Oro"></span>
-        <p class="section-tag" data-aos="fade-up">Negro</p>
-        <span class="palette-dot" style="background:#2b2b2b;" title="Negro"></span>
-        <p class="section-tag" data-aos="fade-up">Terracota</p>
-        <span class="palette-dot" style="background:#5f3622;" title="Terracota"></span>
-        <p class="section-tag" data-aos="fade-up">Verde salvia</p>
-        <span class="palette-dot" style="background:#5E6C58;" title="Verde salvia"></span>
-        <p class="section-tag" data-aos="fade-up">Terracota naranja</p>
-        <span class="palette-dot" style="background:#C67D5A;" title="Terracota polvoriento"></span>
-        <p class="section-tag" data-aos="fade-up">Azul acero</p>
-        <span class="palette-dot" style="background:#55737C;" title="Azul acero"></span>
+      <div class="palette-row" data-aos="zoom-in">
+        <div class="palette-swatch">
+          <span class="palette-dot" style="background:#c5a059;"></span>
+          <span class="palette-label">Oro</span>
+        </div>
+        <div class="palette-swatch">
+          <span class="palette-dot" style="background:#2b2b2b;"></span>
+          <span class="palette-label">Negro</span>
+        </div>
+        <div class="palette-swatch">
+          <span class="palette-dot" style="background:#5f3622;"></span>
+          <span class="palette-label">Terracota</span>
+        </div>
+        <div class="palette-swatch">
+          <span class="palette-dot" style="background:#5E6C58;"></span>
+          <span class="palette-label">Verde salvia</span>
+        </div>
+        <div class="palette-swatch">
+          <span class="palette-dot" style="background:#C67D5A;"></span>
+          <span class="palette-label">Terracota naranja</span>
+        </div>
+        <div class="palette-swatch">
+          <span class="palette-dot" style="background:#55737C;"></span>
+          <span class="palette-label">Azul acero</span>
+        </div>
       </div>
       <a class="btn-gold" href="https://pin.it/13JSHjqlU" target="_blank" rel="noopener" data-aos="fade-up">
         <i class="bi bi-pinterest me-1"></i> Ver inspiración en Pinterest
       </a>
-      <p class="mt-3" style="font-size:0.75rem; color:var(--ink-soft);" data-aos="fade-up">
-        <i class="bi bi-info-circle me-1"></i>¡Adapta los colores a tu estilo favorito!
-      </p>
     </div>
   </section>
 
@@ -409,7 +420,7 @@
       </p>
 
       <div class="row g-4">
-        <div class="col-sm-6 col-lg-3" data-aos="flip-up" data-aos-delay="0">
+        <div class="col-12 col-sm-6 col-lg-3" data-aos="flip-up" data-aos-delay="0">
           <div class="trivia-card">
             <div class="trivia-card-inner">
               <div class="trivia-face trivia-front">
@@ -421,7 +432,7 @@
             </div>
           </div>
         </div>
-        <div class="col-sm-6 col-lg-3" data-aos="flip-up" data-aos-delay="100">
+        <div class="col-12 col-sm-6 col-lg-3" data-aos="flip-up" data-aos-delay="100">
           <div class="trivia-card">
             <div class="trivia-card-inner">
               <div class="trivia-face trivia-front">
@@ -433,7 +444,7 @@
             </div>
           </div>
         </div>
-        <div class="col-sm-6 col-lg-3" data-aos="flip-up" data-aos-delay="200">
+        <div class="col-12 col-sm-6 col-lg-3" data-aos="flip-up" data-aos-delay="200">
           <div class="trivia-card">
             <div class="trivia-card-inner">
               <div class="trivia-face trivia-front">
@@ -445,7 +456,7 @@
             </div>
           </div>
         </div>
-        <div class="col-sm-6 col-lg-3" data-aos="flip-up" data-aos-delay="300">
+        <div class="col-12 col-sm-6 col-lg-3" data-aos="flip-up" data-aos-delay="300">
           <div class="trivia-card">
             <div class="trivia-card-inner">
               <div class="trivia-face trivia-front">
@@ -457,7 +468,7 @@
             </div>
           </div>
         </div>
-        <div class="col-sm-6 col-lg-3" data-aos="flip-up" data-aos-delay="0">
+        <div class="col-12 col-sm-6 col-lg-3" data-aos="flip-up" data-aos-delay="0">
           <div class="trivia-card">
             <div class="trivia-card-inner">
               <div class="trivia-face trivia-front">
@@ -469,7 +480,7 @@
             </div>
           </div>
         </div>
-        <div class="col-sm-6 col-lg-3" data-aos="flip-up" data-aos-delay="100">
+        <div class="col-12 col-sm-6 col-lg-3" data-aos="flip-up" data-aos-delay="100">
           <div class="trivia-card">
             <div class="trivia-card-inner">
               <div class="trivia-face trivia-front">
@@ -481,7 +492,7 @@
             </div>
           </div>
         </div>
-        <div class="col-sm-6 col-lg-3" data-aos="flip-up" data-aos-delay="200">
+        <div class="col-12 col-sm-6 col-lg-3" data-aos="flip-up" data-aos-delay="200">
           <div class="trivia-card">
             <div class="trivia-card-inner">
               <div class="trivia-face trivia-front">
@@ -493,7 +504,7 @@
             </div>
           </div>
         </div>
-        <div class="col-sm-6 col-lg-3" data-aos="flip-up" data-aos-delay="300">
+        <div class="col-12 col-sm-6 col-lg-3" data-aos="flip-up" data-aos-delay="300">
           <div class="trivia-card">
             <div class="trivia-card-inner">
               <div class="trivia-face trivia-front">
@@ -522,19 +533,7 @@
       </p>
 
       <div class="row g-4 justify-content-center">
-        <div class="col-md-6 col-lg-4 position-relative" data-aos="fade-up">
-          <!-- <span class="gift-recommend-badge">Recomendada</span> -->
-          <div class="gift-card">
-            <div class="gift-icon"><i class="bi bi-bag-heart"></i></div>
-            <h4 style="font-size:1.1rem;">Liverpool</h4>
-            <p style="color:var(--ink-soft); font-size:0.88rem;">
-              Mesa de regalos.
-            </p>
-            <a class="btn btn-outline-gold btn-sm mt-2" href="https://meli.uniko.co/E7411/boda/unionariadnaveraydantechavarria" target="_blank" rel="noopener">Ir a Liverpool</a>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up">
           <div class="gift-card">
             <div class="gift-icon"><i class="bi bi-cart3"></i></div>
             <h4 style="font-size:1.1rem;">Amazon</h4>
@@ -545,18 +544,33 @@
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
           <div class="gift-card">
             <div class="gift-icon"><i class="bi bi-bank"></i></div>
-            <h4 style="font-size:1.1rem;">Transferencia</h4>
+            <h4 style="font-size:1.1rem;">Cuenta de Dante</h4>
             <p style="color:var(--ink-soft); font-size:0.88rem;">Si prefieres regalarnos directo en efectivo:</p>
             <div class="clabe-box mt-2">
-              <span id="clabe-number">XXX-XXX-XXX-XXX</span>
-              <button class="copy-btn" id="copy-clabe-btn" type="button">
+              <span id="clabe-novio">XXX-XXX-XXX-XXX</span>
+              <button class="copy-btn" data-copy-target="clabe-novio" type="button">
                 <i class="bi bi-clipboard"></i> Copiar
               </button>
             </div>
-            <p class="mt-2 mb-0" style="font-size:0.75rem; color:var(--ink-soft);">Concepto: "Regalo de bodas" o "Donativo familiar", a nombre de Ariadna Vera / Dante Chavarría</p>
+            <p class="mt-2 mb-0" style="font-size:0.75rem; color:var(--ink-soft);">Concepto: "Regalo de bodas", a nombre de Dante Chavarría</p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="gift-card">
+            <div class="gift-icon"><i class="bi bi-bank2"></i></div>
+            <h4 style="font-size:1.1rem;">Cuenta de Ariadna</h4>
+            <p style="color:var(--ink-soft); font-size:0.88rem;">Si prefieres regalarnos directo en efectivo:</p>
+            <div class="clabe-box mt-2">
+              <span id="clabe-novia">XXX-XXX-XXX-XXX</span>
+              <button class="copy-btn" data-copy-target="clabe-novia" type="button">
+                <i class="bi bi-clipboard"></i> Copiar
+              </button>
+            </div>
+            <p class="mt-2 mb-0" style="font-size:0.75rem; color:var(--ink-soft);">Concepto: "Regalo de bodas", a nombre de Ariadna Vera</p>
           </div>
         </div>
       </div>

@@ -28,6 +28,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -124,12 +125,19 @@ a:hover { color: var(--gold); }
    ========================================================= */
 #envelope-overlay {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
   z-index: 3000;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 24px 20px;
   background: radial-gradient(circle at center, var(--ivory) 0%, #f3ead8 100%);
   transition: opacity 1s ease, visibility 1s ease;
 }
@@ -141,14 +149,17 @@ a:hover { color: var(--gold); }
 }
 
 .envelope-intro-names {
+  width: 100%;
   font-family: var(--font-script);
-  font-size: clamp(2.2rem, 7vw, 3.6rem);
+  font-size: clamp(1.9rem, 9vw, 3.6rem);
   color: var(--gold-dark);
   margin-bottom: 8px;
   text-align: center;
+  overflow-wrap: break-word;
 }
 
 .envelope-intro-sub {
+  width: 100%;
   font-family: var(--font-body);
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -156,6 +167,8 @@ a:hover { color: var(--gold); }
   color: var(--ink-soft);
   margin-bottom: 40px;
   text-align: center;
+  max-width: 320px;
+  overflow-wrap: break-word;
 }
 
 .envelope {
@@ -774,6 +787,20 @@ a:hover { color: var(--gold); }
 /* =========================================================
    VESTIMENTA
    ========================================================= */
+.palette-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px 26px;
+  margin: 0 auto 28px;
+  max-width: 560px;
+}
+.palette-swatch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
 .palette-dot {
   width: 34px;
   height: 34px;
@@ -781,6 +808,13 @@ a:hover { color: var(--gold); }
   display: inline-block;
   border: 2px solid var(--white);
   box-shadow: 0 0 0 1px var(--gold-light);
+}
+.palette-label {
+  font-size: 0.68rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  text-align: center;
 }
 
 /* =========================================================
@@ -1114,6 +1148,8 @@ footer.wedding-footer small {
   .countdown-box { width: 74px; padding: 12px 4px; }
   .gold-frame::before, .gold-frame::after { width: 30px; height: 30px; }
   .clabe-box { flex-direction: column; text-align: center; }
+  .trivia-card { height: 210px; }
+  .palette-row { gap: 16px 20px; }
 }
 
 @media (max-width: 991.98px) {

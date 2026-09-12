@@ -59,10 +59,8 @@
         <ul class="navbar-nav ms-auto text-center">
           <li class="nav-item"><a class="nav-link" href="#bienvenida">Bienvenida</a></li>
           <li class="nav-item"><a class="nav-link" href="#historia">Historia</a></li>
-          <li class="nav-item"><a class="nav-link" href="#ceremonia">Ceremonia</a></li>
-          <li class="nav-item"><a class="nav-link" href="#ubicacion">Ubicación</a></li>
-          <li class="nav-item"><a class="nav-link" href="#vestimenta">Vestimenta</a></li>
-          <li class="nav-item"><a class="nav-link" href="hospedaje.html">Hospedaje</a></li>
+          <li class="nav-item"><a class="nav-link" href="#ubicacion">Itinerario</a></li>
+          <li class="nav-item"><a class="nav-link" href="#detalles">Detalles</a></li>
           <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
           <li class="nav-item"><a class="nav-link" href="#regalos">Regalos</a></li>
         </ul>
@@ -101,18 +99,13 @@
         <circle cx="100" cy="30" r="3" fill="#c5a059"/>
       </svg>
 
-      <!-- Nota personalizada: se completa por script.js solo si ?invitado= hace match en invitados.json -->
-      <div id="guest-note" class="guest-note mx-auto mb-4" hidden data-aos="fade-up">
+      <!-- Nota personalizada: se completa por script.js con el mensaje único de invitados.csv
+           (ya incluye el saludo general + el mensaje específico del invitado) -->
+      <div id="guest-note" class="guest-note mx-auto mb-5" hidden data-aos="fade-up">
         <span class="guest-note-tag" id="guest-note-tag"></span>
         <p class="guest-note-name" id="guest-note-name"></p>
         <p class="guest-note-message" id="guest-note-message"></p>
       </div>
-
-      <p class="mx-auto mb-5" style="max-width:640px; color:var(--ink-soft);" data-aos="fade-up">
-        Con el corazón lleno de alegría, junto a nuestras familias, queremos invitarte a celebrar
-        el día en que unimos nuestras vidas para siempre. Tu presencia es el regalo más importante
-        que podemos recibir.
-      </p>
 
       <div class="row g-4 justify-content-center mb-5">
         <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="50">
@@ -248,41 +241,12 @@
   </section>
 
   <!-- =========================================================
-       4) CEREMONIA Y RECEPCIÓN
-       ========================================================= -->
-  <section id="ceremonia" class="section-pad">
-    <div class="container text-center">
-      <p class="section-tag" data-aos="fade-up">Los detalles</p>
-      <h2 class="section-title mb-5" data-aos="fade-up">Ceremonia &amp; Recepción</h2>
-
-      <div class="row g-4 justify-content-center">
-        <div class="col-12 col-md-5" data-aos="fade-up">
-          <div class="event-card">
-            <div class="event-icon"><i class="bi bi-chat-heart"></i></div>
-            <h4>Ceremonia</h4>
-            <p style="color:var(--ink-soft);">3:00 PM</p>
-            <p style="color:var(--ink-soft); font-size:0.88rem;">Jardín Quinta Real de Cuernavaca</p>
-          </div>
-        </div>
-        <div class="col-12 col-md-5" data-aos="fade-up" data-aos-delay="150">
-          <div class="event-card">
-            <div class="event-icon"><i class="bi bi-cup-hot"></i></div>
-            <h4>Recepción</h4>
-            <p style="color:var(--ink-soft);">A continuación</p>
-            <p style="color:var(--ink-soft); font-size:0.88rem;">Mismo lugar — Jardín Quinta Real de Cuernavaca</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================
-       5) UBICACIÓN
+       4) UBICACIÓN E ITINERARIO
        ========================================================= -->
   <section id="ubicacion" class="section-pad" style="background:var(--white);">
     <div class="container text-center">
-      <p class="section-tag" data-aos="fade-up">Cómo llegar</p>
-      <h2 class="section-title" data-aos="fade-up">Ubicación</h2>
+      <p class="section-tag" data-aos="fade-up">Cómo llegar y a qué hora</p>
+      <h2 class="section-title" data-aos="fade-up">Ubicación e Itinerario</h2>
       <p class="mx-auto mb-4" style="max-width:560px; color:var(--ink-soft);" data-aos="fade-up">
         Jardín Quinta Real de Cuernavaca — casi entrando a Cuernavaca viniendo desde la Ciudad de México.
       </p>
@@ -298,7 +262,7 @@
         </div>
       </div>
 
-      <div class="d-flex flex-wrap gap-3 justify-content-center" data-aos="fade-up">
+      <div class="d-flex flex-wrap gap-3 justify-content-center mb-5" data-aos="fade-up">
         <a class="btn-gold" href="https://maps.app.goo.gl/QBwGFh3ovHHrN6xG9" target="_blank" rel="noopener">
           <i class="bi bi-geo-alt me-1"></i> Abrir en Google Maps
         </a>
@@ -306,74 +270,102 @@
           <i class="bi bi-signpost-2 me-1"></i> Abrir en Waze
         </a>
       </div>
-    </div>
-  </section>
 
-  <!-- =========================================================
-       6) CÓDIGO DE VESTIMENTA
-       ========================================================= -->
-  <section id="vestimenta" class="section-pad">
-    <div class="container text-center">
-      <p class="section-tag" data-aos="fade-up">Dress code</p>
-      <h2 class="section-title" data-aos="fade-up">Formal / Elegante</h2>
-      <p class="mx-auto mb-4" style="max-width:560px; color:var(--ink-soft);" data-aos="fade-up">
-        Queremos celebrar rodeados de elegancia. Te pedimos vestir de gala evitando tonos claros
-        (blanco, beige, arena, ivory, etc.), que reservamos para los novios. Fuera de eso, ¡tú
-        eliges! Aquí te dejamos una paleta de inspiración, pero puedes usar estos colores
-        <strong>o cualquier otro</strong> con el que te sientas cómodo/a.
-      </p>
-      <div class="palette-row" data-aos="zoom-in">
-        <div class="palette-swatch">
-          <span class="palette-dot" style="background:#c5a059;"></span>
-          <span class="palette-label">Oro</span>
+      <div class="row g-4 justify-content-center">
+        <div class="col-12 col-md-5" data-aos="fade-up">
+          <div class="event-card">
+            <div class="event-icon"><i class="bi bi-chat-heart"></i></div>
+            <h4>Ceremonia</h4>
+            <p style="color:var(--ink-soft);">3:00 PM</p>
+          </div>
         </div>
-        <div class="palette-swatch">
-          <span class="palette-dot" style="background:#2b2b2b;"></span>
-          <span class="palette-label">Negro</span>
-        </div>
-        <div class="palette-swatch">
-          <span class="palette-dot" style="background:#5f3622;"></span>
-          <span class="palette-label">Terracota</span>
-        </div>
-        <div class="palette-swatch">
-          <span class="palette-dot" style="background:#5E6C58;"></span>
-          <span class="palette-label">Verde salvia</span>
-        </div>
-        <div class="palette-swatch">
-          <span class="palette-dot" style="background:#C67D5A;"></span>
-          <span class="palette-label">Terracota naranja</span>
-        </div>
-        <div class="palette-swatch">
-          <span class="palette-dot" style="background:#55737C;"></span>
-          <span class="palette-label">Azul acero</span>
+        <div class="col-12 col-md-5" data-aos="fade-up" data-aos-delay="150">
+          <div class="event-card">
+            <div class="event-icon"><i class="bi bi-cup-hot"></i></div>
+            <h4>Recepción</h4>
+            <p style="color:var(--ink-soft);">Inmediatamente después</p>
+          </div>
         </div>
       </div>
-      <a class="btn-gold" href="https://pin.it/13JSHjqlU" target="_blank" rel="noopener" data-aos="fade-up">
-        <i class="bi bi-pinterest me-1"></i> Ver inspiración en Pinterest
-      </a>
     </div>
   </section>
 
   <!-- =========================================================
-       7) HOSPEDAJE (teaser — la tabla completa vive en hospedaje.html
-          para no romper el mood romántico de la invitación)
+       6) DETALLES (vestimenta + hospedaje + avisos)
        ========================================================= -->
-  <section id="hospedaje" class="section-pad" style="background:var(--white);">
+  <section id="detalles" class="section-pad">
     <div class="container text-center">
-      <p class="section-tag" data-aos="fade-up">Para nuestros invitados de fuera</p>
-      <h2 class="section-title" data-aos="fade-up">Hospedaje</h2>
-      <svg class="flourish" viewBox="0 0 200 60" data-aos="fade-up">
-        <path d="M10,30 C40,10 70,50 100,30 C130,10 160,50 190,30" stroke="#c5a059" stroke-width="1.5" fill="none"/>
-        <circle cx="100" cy="30" r="3" fill="#c5a059"/>
-      </svg>
-      <p class="mx-auto mb-4" style="max-width:560px; color:var(--ink-soft);" data-aos="fade-up">
-        Para quienes vienen de fuera, reunimos algunas opciones de hoteles y casas cerca del
-        Jardín Quinta Real — desde hoteles de cadena hasta casas privadas con alberca, ideales
-        para quedarse en grupo.
-      </p>
-      <a class="btn-gold" href="hospedaje.html" data-aos="zoom-in">
-        <i class="bi bi-house-heart me-1"></i> Ver opciones de hospedaje
-      </a>
+      <p class="section-tag" data-aos="fade-up">Para tomar en cuenta</p>
+      <h2 class="section-title mb-5" data-aos="fade-up">Detalles</h2>
+
+      <div class="row g-5 justify-content-center text-center text-lg-start mb-5">
+        <div class="col-12 col-lg-6" data-aos="fade-right">
+          <h4 class="mb-3"><i class="bi bi-stars me-2"></i>Vestimenta — Formal / Elegante</h4>
+          <p style="color:var(--ink-soft);">
+            Queremos celebrar rodeados de elegancia. Te pedimos vestir de gala evitando tonos claros
+            (blanco, beige, arena, ivory, etc.), que reservamos para los novios. Fuera de eso, ¡tú
+            eliges! Aquí te dejamos una paleta de inspiración con los colores de la boda.
+          </p>
+          <div class="palette-row justify-content-center justify-content-lg-start" data-aos="zoom-in">
+            <div class="palette-swatch">
+              <span class="palette-dot" style="background:#c5a059;"></span>
+              <span class="palette-label">Oro</span>
+            </div>
+            <div class="palette-swatch">
+              <span class="palette-dot" style="background:#2b2b2b;"></span>
+              <span class="palette-label">Negro</span>
+            </div>
+            <div class="palette-swatch">
+              <span class="palette-dot" style="background:#5f3622;"></span>
+              <span class="palette-label">Terracota</span>
+            </div>
+            <div class="palette-swatch">
+              <span class="palette-dot" style="background:#5E6C58;"></span>
+              <span class="palette-label">Verde salvia</span>
+            </div>
+            <div class="palette-swatch">
+              <span class="palette-dot" style="background:#C67D5A;"></span>
+              <span class="palette-label">Terracota naranja</span>
+            </div>
+            <div class="palette-swatch">
+              <span class="palette-dot" style="background:#55737C;"></span>
+              <span class="palette-label">Azul acero</span>
+            </div>
+          </div>
+          <a class="btn-gold" href="https://pin.it/13JSHjqlU" target="_blank" rel="noopener" data-aos="fade-up">
+            <i class="bi bi-pinterest me-1"></i> Ver inspiración
+          </a>
+        </div>
+
+        <div class="col-12 col-lg-6" data-aos="fade-left">
+          <h4 class="mb-3"><i class="bi bi-house-heart me-2"></i>Hospedaje</h4>
+          <p style="color:var(--ink-soft);">
+            Para quienes vienen de fuera, reunimos algunas opciones de hoteles y casas cerca del
+            Jardín Quinta Real — desde hoteles de cadena hasta casas privadas con alberca, ideales
+            para quedarse en grupo.
+          </p>
+          <a class="btn-gold" href="hospedaje.html" data-aos="zoom-in">
+            <i class="bi bi-house-heart me-1"></i> Ver opciones de hospedaje
+          </a>
+        </div>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-12 col-md-5" data-aos="fade-up">
+          <div class="event-card">
+            <div class="event-icon"><i class="bi bi-emoji-smile"></i></div>
+            <h4>Solo para adultos</h4>
+            <p style="color:var(--ink-soft); font-size:0.9rem;">Amamos a tus pequeños, pero esta celebración será un evento sin niños.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-5" data-aos="fade-up" data-aos-delay="150">
+          <div class="event-card">
+            <div class="event-icon" style="font-size:1.6rem;">👟</div>
+            <h4>¡Trae tus tenis!</h4>
+            <p style="color:var(--ink-soft); font-size:0.9rem;">Para bailar sin parar toda la noche — tu comodidad es lo primero.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -574,20 +566,6 @@
           </div>
         </div>
       </div>
-
-
-      <p class="mt-5 mx-auto" style="max-width:640px; font-size:0.82rem; color:var(--ink-soft);" data-aos="fade-up">
-        <i class="bi bi-lightbulb me-1"></i>        <p class="section-tag" data-aos="fade-up"> AVISOS</p>
-        <strong>Amamos a tus pequeños,</strong> pero esta celebración será un evento solo para adultos.           💃🕺
-        <strong>¡Trae tus propios tenis! 👟✨</strong> Para bailar sin parar toda la noche, recuerda traer tus tenis o zapatos favoritos.
-        <strong>¡Tu comodidad es lo primero!</strong>
-      </p>
-
-      <!-- <p class="mt-5 mx-auto" style="max-width:640px; font-size:0.82rem; color:var(--ink-soft);" data-aos="fade-up">
-        <i class="bi bi-lightbulb me-1"></i><strong>¿Cuál elegir?</strong> Te recomendamos
-        <strong>Transferencia</strong> como opción principal, o
-        <strong>Amazon</strong> para quienes prefieran algo tangible. 
-      </p> -->
     </div>
   </section>
 

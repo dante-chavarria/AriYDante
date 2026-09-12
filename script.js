@@ -7,13 +7,34 @@
 document.addEventListener('DOMContentLoaded', function () {
 
   /* ---------------------------------------------------------
+     -1) PROPAGAR ?invitado=CODIGO ENTRE PÁGINAS
+     Si la URL actual trae un código, lo copiamos a todos los links
+     internos hacia index.html / hospedaje.html (navbar, "Ver
+     hospedaje", "Volver a la invitación", etc.) para que el
+     invitado pueda ir y volver sin perder su invitación abierta.
+     Corre de inmediato, sin esperar el fetch de invitados.csv.
+     --------------------------------------------------------- */
+  (function propagateGuestCodeInLinks() {
+    const code = new URLSearchParams(window.location.search).get('invitado');
+    if (!code) return;
+    document.querySelectorAll('a[href]').forEach(function (link) {
+      const href = link.getAttribute('href');
+      if (!href || !/^(index\.html|hospedaje\.html)(#|\?|$)/.test(href)) return;
+      if (href.indexOf('invitado=') !== -1) return; // ya trae código
+      const hashIndex = href.indexOf('#');
+      const path = hashIndex === -1 ? href : href.slice(0, hashIndex);
+      const hash = hashIndex === -1 ? '' : href.slice(hashIndex);
+      const separator = path.indexOf('?') === -1 ? '?' : '&';
+      link.setAttribute('href', path + separator + 'invitado=' + encodeURIComponent(code) + hash);
+    });
+  })();
+
+  /* ---------------------------------------------------------
      0) INVITACIÓN PERSONALIZADA (?invitado=CODIGO)
-     Lee invitados.json, busca el código de la URL y, si hace match,
+     Lee invitados.csv, busca el código de la URL y, si hace match,
      rellena la nota personalizada y aplica la visibilidad de
-     padrinos. Si la URL trae un código y NO hace match, el sobre
-     se bloquea (no abre). Sin código en la URL, la invitación se
-     comporta de forma genérica (para que ustedes puedan seguir
-     revisando el diseño sin necesitar siempre un enlace).
+     padrinos. Si la URL no trae código, o trae uno que no hace
+     match, el sobre se bloquea (no abre).
      --------------------------------------------------------- */
   const GUESTS_URL = 'invitados.csv';
   let envelopeLocked = false;
@@ -168,9 +189,18 @@ document.addEventListener('DOMContentLoaded', function () {
     body.classList.add('no-scroll');
   }
 
-  function openEnvelope() {
+  // skipAnimation === true: abre de golpe, sin esperar la animación del
+  // sobre (se usa al volver de hospedaje.html hacia una sección concreta,
+  // para no obligar al invitado a "reabrir" una invitación que ya abrió).
+  function openEnvelope(skipAnimation) {
     if (!envelope || envelope.classList.contains('is-open') || envelopeLocked) return;
     envelope.classList.add('is-open');
+
+    if (skipAnimation === true) {
+      overlay.classList.add('hidden');
+      body.classList.remove('no-scroll');
+      return;
+    }
 
     // Espera a que termine la animación del sobre antes de desvanecer el overlay
     setTimeout(function () {
@@ -184,10 +214,24 @@ document.addEventListener('DOMContentLoaded', function () {
     // instantáneo) para que no se alcance a abrir un sobre que debía
     // quedar bloqueado.
     guestReady.finally(function () {
-      envelope.addEventListener('click', openEnvelope);
+      envelope.addEventListener('click', function () { openEnvelope(); });
       envelope.addEventListener('keypress', function (e) {
         if (e.key === 'Enter' || e.key === ' ') openEnvelope();
       });
+
+      // Si el invitado es válido y la URL ya trae una sección (por ejemplo,
+      // regresando de hospedaje.html con "...index.html?invitado=X#detalles"),
+      // no lo regresamos al sobre cerrado: lo abrimos directo y lo llevamos
+      // a esa sección.
+      if (!envelopeLocked && window.location.hash) {
+        openEnvelope(true);
+        const target = document.querySelector(window.location.hash);
+        if (target) {
+          requestAnimationFrame(function () {
+            target.scrollIntoView();
+          });
+        }
+      }
     });
   }
 

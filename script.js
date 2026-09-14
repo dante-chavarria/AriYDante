@@ -119,7 +119,8 @@ document.addEventListener('DOMContentLoaded', function () {
       const tagLabels = {
         familia: 'Para ustedes, con cariño',
         pareja: '💍 Para ustedes',
-        personal: '💌 Para ti'
+        personal: '💌 Para ti',
+        amigos: '🎉 Para ustedes'
       };
       if (noteTag) noteTag.textContent = tagLabels[guest.tipo] || '💌 Para ti';
       if (noteName) noteName.textContent = guest.nombre;

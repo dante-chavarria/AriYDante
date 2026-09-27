@@ -289,7 +289,7 @@ a:hover { color: var(--gold); }
   text-align: center;
 }
 
-/* Invitación personalizada: código en la URL no encontrado en invitados.json */
+/* Invitación personalizada: código en la URL no encontrado en invitadosA.csv / invitadosD.csv */
 .envelope.is-locked {
   cursor: not-allowed;
   filter: grayscale(0.6) brightness(0.96);

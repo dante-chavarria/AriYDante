@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
      internos hacia index.html / hospedaje.html (navbar, "Ver
      hospedaje", "Volver a la invitación", etc.) para que el
      invitado pueda ir y volver sin perder su invitación abierta.
-     Corre de inmediato, sin esperar el fetch de invitados.csv.
+     Corre de inmediato, sin esperar el fetch de invitadosA.csv / invitadosD.csv.
      --------------------------------------------------------- */
   (function propagateGuestCodeInLinks() {
     const code = new URLSearchParams(window.location.search).get('invitado');
@@ -31,12 +31,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /* ---------------------------------------------------------
      0) INVITACIÓN PERSONALIZADA (?invitado=CODIGO)
-     Lee invitados.csv, busca el código de la URL y, si hace match,
-     rellena la nota personalizada y aplica la visibilidad de
-     padrinos. Si la URL no trae código, o trae uno que no hace
-     match, el sobre se bloquea (no abre).
+     Busca el código primero en invitadosA.csv (Ariadna) y, si no
+     aparece ahí, en invitadosD.csv (Dante) — así cada quien edita
+     y sube su propio archivo desde su cuenta de GitHub sin generar
+     conflictos de merge en el mismo archivo. Rellena la nota
+     personalizada y aplica la visibilidad de padrinos según el
+     archivo donde se encontró el código. Si la URL no trae código,
+     o trae uno que no aparece en ninguno de los dos, el sobre se
+     bloquea (no abre).
      --------------------------------------------------------- */
-  const GUESTS_URL = 'invitados.csv';
+  const GUESTS_URLS = ['invitadosA.csv', 'invitadosD.csv'];
   let envelopeLocked = false;
 
   function getGuestCodeFromURL() {
@@ -47,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Parser CSV mínimo (soporta campos entre comillas con comas, comillas
   // dobles escapadas "" y saltos de línea dentro del campo) — así el
-  // archivo invitados.csv se puede editar tranquilamente en Excel o
+  // los archivos invitadosA.csv / invitadosD.csv se pueden editar tranquilamente en Excel o
   // Google Sheets sin romper el sitio.
   function parseCSV(text) {
     const rows = [];
@@ -150,29 +154,43 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
 
-    try {
-      // Cache-busting: cada carga pide la versión más reciente del CSV,
-      // nunca una copia vieja guardada en caché del navegador/CDN.
-      const bust = Date.now();
-      const res = await fetch(`${GUESTS_URL}?v=${bust}`, { cache: 'no-store' });
-      if (!res.ok) throw new Error('No se pudo leer invitados.csv');
-      const text = await res.text();
-      const guests = csvToGuestList(text);
-      const guest = guests.find(function (g) {
-        return (g.id || '').toUpperCase() === code;
-      });
+    // Cache-busting: cada carga pide la versión más reciente de cada CSV,
+    // nunca una copia vieja guardada en caché del navegador/CDN.
+    const bust = Date.now();
+    let guest = null;
+    let anyFileLoaded = false;
 
-      if (!guest) {
-        lockEnvelope('Este enlace no es válido.', 'Pide tu enlace personal a los novios ✦');
-        return;
+    for (const url of GUESTS_URLS) {
+      try {
+        const res = await fetch(`${url}?v=${bust}`, { cache: 'no-store' });
+        if (!res.ok) throw new Error(`No se pudo leer ${url}`);
+        const text = await res.text();
+        anyFileLoaded = true;
+        const guests = csvToGuestList(text);
+        guest = guests.find(function (g) {
+          return (g.id || '').toUpperCase() === code;
+        });
+        if (guest) break; // encontrado: no hace falta revisar el siguiente archivo
+      } catch (err) {
+        // Este archivo en particular falló (ej. aún no existe, error de red
+        // puntual): lo registramos y seguimos con el siguiente de la lista
+        // en vez de bloquear la invitación por completo.
+        console.warn(`No se pudo cargar ${url}:`, err);
       }
-      applyGuest(guest);
-    } catch (err) {
-      // Si falla la carga (sin internet, JSON caído, etc.) no dejamos el
-      // sobre en un estado ambiguo: lo tratamos igual que un código inválido.
-      console.warn('No se pudo cargar la invitación personalizada:', err);
-      lockEnvelope('No pudimos verificar tu invitación.', 'Intenta de nuevo más tarde ✦');
     }
+
+    if (!anyFileLoaded) {
+      // Ningún archivo cargó: no dejamos el sobre en un estado ambiguo,
+      // lo tratamos igual que un código inválido.
+      lockEnvelope('No pudimos verificar tu invitación.', 'Intenta de nuevo más tarde ✦');
+      return;
+    }
+
+    if (!guest) {
+      lockEnvelope('Este enlace no es válido.', 'Pide tu enlace personal a los novios ✦');
+      return;
+    }
+    applyGuest(guest);
   }
 
   const guestReady = loadGuest();
